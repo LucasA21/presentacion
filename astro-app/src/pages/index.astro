@@ -9,42 +9,111 @@ import { ChevronRight } from 'lucide-react';
     <title>Presentación Tailwind & shadcn</title>
   </head>
 
-  <body class="w-full h-screen bg-gradient-to-br from-indigo-900 via-purple-800 to-indigo-900
-               flex items-center justify-center overflow-hidden">
-    <div class="relative text-center max-w-xl px-6 py-10 bg-gradient-to-br from-purple-800 via-indigo-700 to-purple-800 backdrop-blur-md rounded-3xl shadow-2xl animate-fadeIn">
-      <div class="space-y-2">
-        <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-white animate-slideInDown">
+  <body
+    class="
+      w-full h-screen
+      bg-gradient-to-br from-indigo-900 via-purple-800 to-indigo-900
+      flex items-center justify-center overflow-hidden
+    "
+  >
+    <div
+      class="
+        relative text-center
+        w-[90%] max-w-lg
+        px-4 sm:px-6 md:px-8 lg:px-10
+        py-8 sm:py-10 md:py-12 lg:py-16
+        bg-gradient-to-br from-purple-800 via-indigo-700 to-purple-800
+        backdrop-blur-md rounded-3xl shadow-2xl
+        animate-fadeIn
+      "
+    >
+      <div class="space-y-1 sm:space-y-2">
+        <h1
+          class="
+            text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+            font-extrabold tracking-tight
+            bg-clip-text text-transparent bg-white
+            animate-slideInDown
+          "
+        >
           Tailwind
         </h1>
-        <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-white">
+        <h1
+          class="
+            text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+            font-extrabold tracking-tight
+            bg-clip-text text-transparent bg-white
+          "
+        >
           &
         </h1>
-        <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight bg-clip-text text-transparent bg-white  animate-slideInUp">
+        <h1
+          class="
+            text-3xl sm:text-4xl md:text-5xl lg:text-6xl
+            font-extrabold tracking-tight
+            bg-clip-text text-transparent bg-white
+            animate-slideInUp
+          "
+        >
           Shadcn
         </h1>
       </div>
 
-      <hr class="border-white/30 my-6" />
+      <hr class="border-white/30 my-4 sm:my-6" />
 
-      <p class="mt-2 text-lg md:text-xl text-indigo-100 animate-fadeIn delay-200">
-        Crea interfaces y componentes estilizados de manera rapida y sencilla
+      <p
+        class="
+          mt-2 text-base sm:text-lg md:text-xl
+          text-indigo-100
+          animate-fadeIn delay-200
+        "
+      >
+        Crea interfaces y componentes estilizados de manera rápida y sencilla
       </p>
 
-      <div class="mt-8 ">
-        <a href="/page1" class="inline-flex items-center bg-white/90 text-purple-700 font-semibold px-8 py-3 rounded-full shadow-lg hover:bg-purple-50 transition duration-300 transform hover:scale-105 animate-bounce">
+      <div class="mt-6 sm:mt-8">
+        <a
+          href="/page1"
+          class="
+            inline-flex items-center
+            bg-white/90 text-purple-700 font-semibold
+            px-6 sm:px-8 md:px-10 py-2 sm:py-3
+            rounded-full shadow-lg
+            hover:bg-purple-50
+            transition duration-300 transform hover:scale-105
+            animate-bounce
+          "
+        >
           Iniciar Presentación
-          <ChevronRight className="ml-2 h-5 w-5" />
+          <ChevronRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
         </a>
       </div>
     </div>
 
     <style>
-      @keyframes fadeIn { from { opacity: 0 } to { opacity: 1 } }
-      .animate-fadeIn { animation: fadeIn 1s ease-out; }
-      @keyframes slideInDown { from { transform: translateY(-50px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
-      .animate-slideInDown { animation: slideInDown 0.8s ease-out; }
-      @keyframes slideInUp { from { transform: translateY(50px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
-      .animate-slideInUp { animation: slideInUp 0.8s ease-out; }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 1s ease-out;
+      }
+
+      @keyframes slideInDown {
+        from { transform: translateY(-50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .animate-slideInDown {
+        animation: slideInDown 0.8s ease-out;
+      }
+
+      @keyframes slideInUp {
+        from { transform: translateY(50px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+      }
+      .animate-slideInUp {
+        animation: slideInUp 0.8s ease-out;
+      }
     </style>
   </body>
 </html>
