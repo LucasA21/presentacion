@@ -10,33 +10,98 @@ import '../styles/global.css';
     <title>{title}</title>
   </head>
 
-  <body class="min-h-screen flex flex-col bg-gray-100 overflow-x-hidden">
-    <!-- Header fijo -->
+  <body class="min-h-screen flex flex-col dark:bg-gray-900 bg-gray-100 overflow-x-hidden">
     <header
-      class="
-        fixed top-0 left-0 w-full h-16
-        bg-gradient-to-r from-purple-800 via-indigo-700 to-blue-600
-        text-white flex items-center justify-center
-        shadow-lg z-20
-      "
-    >
-      <h1 class="text-xl sm:text-2xl md:text-3xl font-semibold uppercase">
+  class="
+    fixed top-0 left-0 w-full
+    bg-gradient-to-r from-purple-800 via-indigo-700 to-blue-600
+    text-white
+    shadow-lg z-20
+    py-2 sm:py-3 md:py-4
+  "
+>
+  <div class="grid grid-cols-3 items-center w-full px-4 sm:px-6 md:px-8">
+    <div class="flex justify-start">
+      {prev && (
+        <a
+          href={prev}
+          aria-label="Anterior"
+          class="
+            md:hidden  /* Solo en móvil/tablet (<768px) */
+            inline-flex items-center
+            bg-white/90 dark:bg-gray-700/80
+            p-2 rounded-full shadow-md
+            hover:scale-110 transition duration-200
+          "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-purple-700 dark:text-purple-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M15 19l-7-7 7-7" />
+          </svg>
+        </a>
+      )}
+    </div>
+
+    <div class="flex justify-center">
+      <h1
+        class="
+          text-base sm:text-2xl md:text-2xl lg:text-3xl
+          font-semibold uppercase
+          text-center
+          break-words
+        "
+      >
         {title}
       </h1>
-    </header>
+    </div>
 
-    <!-- Main: empieza debajo del header (pt-16) y centra todo -->
+    <!-- Celda Derecha: Flecha “Siguiente” en <768px, invisible en ≥768px -->
+    <div class="flex justify-end">
+      {next && (
+        <a
+          href={next}
+          aria-label="Siguiente"
+          class="
+            md:hidden  /* Solo en móvil/tablet (<768px) */
+            inline-flex items-center
+            bg-white/90 dark:bg-gray-700/80
+            p-2 rounded-full shadow-md
+            hover:scale-110 transition duration-200
+          "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 text-purple-700 dark:text-purple-300"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      )}
+    </div>
+  </div>
+</header>
+
+
     <main
       class="
         flex-1 relative flex items-center justify-center
         pt-16 px-4 sm:px-6 md:px-8
       "
     >
-      <!-- Tarjeta centrada -->
       <div
         class="
-          relative w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-3xl
-          bg-white/20 backdrop-blur-md rounded-3xl shadow-xl
+          relative w-full max-w-xl sm:max-w-lg md:max-w-2xl lg:max-w-3xl
+          bg-white/20 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl shadow-xl
           p-6 sm:p-8 md:p-10 lg:p-12
           space-y-6
           transform transition-transform duration-300 hover:scale-105
@@ -46,22 +111,22 @@ import '../styles/global.css';
         <slot />
       </div>
 
-      <!-- Flecha anterior -->
       {prev && (
         <a
           href={prev}
           aria-label="Anterior"
           class="
-            absolute left-2 sm:left-4 md:left-6
+            hidden md:flex absolute left-2 sm:left-4 md:left-6
             top-1/2 transform -translate-y-1/2
             bg-white/90 p-2 sm:p-3 md:p-4
+            dark:bg-gray-700/80
             rounded-full shadow-md
             hover:scale-110 transition
           "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 sm:h-6 sm:w-6 text-purple-700"
+            class="h-5 w-5 sm:h-6 sm:w-6 text-purple-700 dark:text-purple-300"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -71,22 +136,22 @@ import '../styles/global.css';
         </a>
       )}
 
-      <!-- Flecha siguiente -->
       {next && (
         <a
           href={next}
           aria-label="Siguiente"
           class="
-            absolute right-2 sm:right-4 md:right-6
+            hidden md:flex absolute right-2 sm:right-4 md:right-6
             top-1/2 transform -translate-y-1/2
             bg-white/90 p-2 sm:p-3 md:p-4
+            dark:bg-gray-700/80
             rounded-full shadow-md
             hover:scale-110 transition
           "
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 sm:h-6 sm:w-6 text-purple-700"
+            class="h-5 w-5 sm:h-6 sm:w-6 text-purple-700 dark:text-purple-300"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -97,7 +162,6 @@ import '../styles/global.css';
       )}
     </main>
 
-    <!-- Animaciones -->
     <style>
       @keyframes fadeIn {
         from { opacity: 0; }

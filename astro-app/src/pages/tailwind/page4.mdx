@@ -1,0 +1,39 @@
+---
+layout: '../../layouts/main.astro'
+title: "Tailwind CSS: Instalacion"
+prev: '/tailwind/page3'
+next: '/tailwind/page5'
+---
+
+`Tailwind es muy facil de instalar y configurar`
+
+Esta configuracion es valida para cualquier proyecto que use **Vite**,
+como **Astro, React, Vue, Svelte.**
+
+- **1** - Instalar dependencias:
+
+```bash
+npm install tailwindcss @tailwindcss/vite
+```
+
+- **2** - Agregar Tailwind a tu configuracion de Vite:
+
+```bash
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})
+```
+- **3** - Importar Tailwind en tu CSS:
+
+```bash
+@import "tailwindcss";
+```
+
+
+
+
+

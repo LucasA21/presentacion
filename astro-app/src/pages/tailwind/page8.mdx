@@ -1,0 +1,26 @@
+---
+layout: '../../layouts/main.astro'
+title: "Tailwind CSS: Dark Mode"
+prev: '/tailwind/page7'
+next: '/tailwind/page9'
+---
+
+import DarkModeSwitch  from '@/components/ui/dark'
+
+      Tailwind CSS soporta modo oscuro de forma nativa. Para activar el modo
+      oscuro, se usa la clase utilitaria de estado dark.
+
+    ```astro
+    <div class="dark:bg-gray-800 dark:text-white p-4">
+      <h1 class="text-2xl font-bold">Modo Oscuro</h1>
+      <p>Este bloque cambia según el tema.</p>
+    </div>
+    ```
+
+  <div class="flex-shrink-0 flex flex-col items-center md:items-start">
+    <label htmlFor="theme-switch" class="mb-2 font-xl">
+      Activar modo oscuro
+    </label>
+    <DarkModeSwitch client:load />
+  </div>
+

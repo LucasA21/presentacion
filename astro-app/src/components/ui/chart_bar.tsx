@@ -1,16 +1,6 @@
 "use client"
 
-import { TrendingUp } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, Rectangle, XAxis } from "recharts"
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import {
   type ChartConfig,
   ChartContainer,
@@ -18,47 +8,31 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 const chartData = [
-  { browser: "chrome", visitors: 187, fill: "var(--color-chart-1)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-chart-2)" },
-  { browser: "firefox", visitors: 275, fill: "var(--color-chart-3)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-chart-4)" },
-  { browser: "other", visitors: 90, fill: "var(--color-chart-5)" },
+  { browser: "tailwind", visitors: 200, fill: "var(--color-chart-3)" },
+  { browser: "bootstrap", visitors: 270, fill: "var(--color-chart-2)" },
+  { browser: "bulma", visitors: 100, fill: "var(--color-chart-1)" },
 ]
 
 const chartConfig = {
   visitors: {
     label: "Visitors",
   },
-  chrome: {
-    label: "Chrome",
+  bulma: {
+    label: "Bulma",
     color: "hsl(var(--chart-1))",
   },
-  safari: {
-    label: "Safari",
+  bootstrap: {
+    label: "Bootstrap",
     color: "hsl(var(--chart-2))",
   },
-  firefox: {
-    label: "Firefox",
+  tailwind: {
+    label: "Tailwind",
     color: "hsl(var(--chart-3))",
-  },
-  edge: {
-    label: "Edge",
-    color: "hsl(var(--chart-4))",
-  },
-  other: {
-    label: "Other",
-    color: "hsl(var(--chart-5))",
   },
 } satisfies ChartConfig
 
 export function ChartBar() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Bar Chart - Active</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
-      </CardHeader>
-      <CardContent>
         <ChartContainer config={chartConfig}>
           <BarChart accessibilityLayer data={chartData}>
             <CartesianGrid vertical={false} />
@@ -94,15 +68,5 @@ export function ChartBar() {
             />
           </BarChart>
         </ChartContainer>
-      </CardContent>
-      <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex gap-2 font-medium leading-none">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-        </div>
-        <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter>
-    </Card>
   )
 }

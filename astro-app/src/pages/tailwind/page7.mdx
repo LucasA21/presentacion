@@ -1,0 +1,28 @@
+---
+layout: '../../layouts/main.astro'
+title: "Tailwind CSS: Themes"
+prev: '/tailwind/page6'
+next: '/tailwind/page8'
+---
+
+**Temas Personalizados**
+
+Se definen los valores en **`tailwind.config.js`**:
+
+```astro
+module.exports = {
+  theme: {
+    extend: { colors: { primary: bg-gradient-to-r from-purple-800 via-indigo-700 to-blue-600 } },
+  },
+};
+```
+
+```astro
+<button class="bg-primary text-white px-4 py-2 rounded">
+  Primary
+</button>
+```
+
+<button class=" w-50 h-10  bg-gradient-to-r from-purple-800 via-indigo-700 to-blue-600 text-white px-4 py-2 rounded hover:bg-gray-200 transition duration-300">
+  Primary
+</button>

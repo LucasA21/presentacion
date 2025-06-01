@@ -1,17 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { TrendingUp } from "lucide-react"
 import { Label, Pie, PieChart } from "recharts"
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import {
   type ChartConfig,
   ChartContainer,
@@ -19,51 +10,35 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chart-1)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-chart-2)" },
-  { browser: "firefox", visitors: 287, fill: "var(--color-chart-3)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-chart-4)" },
-  { browser: "other", visitors: 190, fill: "var(--color-chart-5)" },
+  { browser: "tailwind", usage: 162000, fill: "var(--color-chart-3)" },
+  { browser: "bootstrap", usage: 88000, fill: "var(--color-chart-2)" },
+  { browser: "bulma", usage: 48000, fill: "var(--color-chart-1)" },
 ]
 
 const chartConfig = {
-  visitors: {
-    label: "Visitors",
+  usage: {
+    label: "Usage",
   },
-  chrome: {
-    label: "Chrome",
-    color: "hsl(var(--chart-1))",
-  },
-  safari: {
-    label: "Safari",
-    color: "hsl(var(--chart-2))",
-  },
-  firefox: {
-    label: "Firefox",
+  tailwind: {
+    label: "Tailwind",
     color: "hsl(var(--chart-3))",
   },
-  edge: {
-    label: "Edge",
-    color: "hsl(var(--chart-4))",
+  bootstrap: {
+    label: "Bootstrap",
+    color: "hsl(var(--chart-2))",
   },
-  other: {
-    label: "Other",
-    color: "hsl(var(--chart-5))",
+  bulma: {
+    label: "Bulma",
+    color: "hsl(var(--chart-1))",
   },
 } satisfies ChartConfig
 
 export function PieChartCard() {
   const totalVisitors = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.visitors, 0)
+    return chartData.reduce((acc, curr) => acc + curr.usage, 0)
   }, [])
 
   return (
-    <Card className="flex flex-col">
-      <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Donut with Text</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
-      </CardHeader>
-      <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
           className="mx-auto aspect-square max-h-[250px]"
@@ -75,7 +50,7 @@ export function PieChartCard() {
             />
             <Pie
               data={chartData}
-              dataKey="visitors"
+              dataKey="usage"
               nameKey="browser"
               innerRadius={60}
               strokeWidth={5}
@@ -93,7 +68,7 @@ export function PieChartCard() {
                         <tspan
                           x={viewBox.cx}
                           y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold"
+                          className="fill-foreground text-2xl font-bold"
                         >
                           {totalVisitors.toLocaleString()}
                         </tspan>
@@ -102,7 +77,7 @@ export function PieChartCard() {
                           y={(viewBox.cy || 0) + 24}
                           className="fill-muted-foreground"
                         >
-                          Visitors
+                          Git Stars
                         </tspan>
                       </text>
                     )
@@ -112,15 +87,5 @@ export function PieChartCard() {
             </Pie>
           </PieChart>
         </ChartContainer>
-      </CardContent>
-      <CardFooter className="flex-col gap-2 text-sm">
-        <div className="flex items-center gap-2 font-medium leading-none">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-        </div>
-        <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter>
-    </Card>
   )
 }
