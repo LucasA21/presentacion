@@ -1,7 +1,82 @@
 ---
 layout: '../../layouts/main.astro'
-title: "Shadcn:"
+title: "Shadcn: Personalización"
 prev: '/shadcn/page5'
 next: '/shadcn/page7'
 ---
 
+1. **Integración con Tailwind**  
+   - Dado que cada componente se estiliza con clases Tailwind, el archivo **tailwind.config.js** se usa para definir **colores**, **tipografías**, **ancho de contenedor**, **breakpoints**, etc.  
+   - **Ejemplo**: Añadir un color personalizado y una familia de fuentes:
+
+     ```js
+     // tailwind.config.js
+     module.exports = {
+       content: [
+         './src/**/*.{js,jsx,ts,tsx,astro}',
+         './src/components/ui/**/*.{ts,tsx}',
+       ],
+       theme: {
+         extend: {
+           colors: {
+             'brand-primary': '#4F46E5',
+             'brand-secondary': '#6366F1'
+           },
+           fontFamily: {
+             sans: ['Inter', 'sans-serif'],
+             serif: ['Merriweather', 'serif']
+           },
+         },
+       },
+       plugins: [
+         require('@tailwindcss/forms'),
+         require('@tailwindcss/typography'),
+       ],
+     };
+     ```
+
+---
+
+2. **Modificar un componente existente**  
+   - Como los componentes viven en el proyecto **(se instalan como archivo plano)**, se puede editar libremente, gracias a esto se le puede dar
+   un estilo personalizado a cada componente.
+   - **Ejemplo**: Cambiar el estilo del componente **Button** para usar **bg-button-primary**:
+
+```ts
+export function Button({ variant, size, ...props }: ButtonProps) {
+  const baseStyles = 'inline-flex items-center justify-center rounded-md font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
+  const variantStyles: Record<string, string> = {
+    primary: 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500',
+    primary: 'bg-button-primary text-white hover:bg-brand-secondary focus:ring-brand-primary',
+    secondary: 'bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300',
+    destructive: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
+  };
+}    
+```
+
+---
+
+3. **Crear un tema oscuro**  
+   - Se puede usar la clase `dark` (configurada en `tailwind.config.js`) para cambiar estilos en modo oscuro:  
+   - Dentro de un componente:  
+     ```tsx
+     <div className="bg-white dark:bg-gray-800 p-4 rounded-md">
+       <h2 className="text-gray-900 dark:text-gray-100">Título</h2>
+       <p className="text-gray-700 dark:text-gray-300">
+         Contenido adaptable al tema.
+       </p>
+     </div>
+     ```
+
+---
+
+4. **Uso de variantes dinámicas**  
+   - Shadcn UI permite variantes predefinidas (p. ej. botones “primary”, “secondary”). Puedes añadir más variantes:
+     ```ts
+     // src/components/ui/button/component.tsx
+     const variantStyles: Record<string, string> = {
+       primary: 'bg-brand-primary text-white hover:bg-brand-secondary focus:ring-brand-primary',
+       secondary: 'bg-gray-100 text-gray-900 hover:bg-gray-200 focus:ring-gray-300',
+       info: 'bg-teal-500 text-white hover:bg-teal-600 focus:ring-teal-500', // nueva variante
+     };
+     ```

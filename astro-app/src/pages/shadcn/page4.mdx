@@ -1,7 +1,44 @@
 ---
 layout: '../../layouts/main.astro'
-title: "Shadcn:"
+title: "Shadcn: Instalacion"
 prev: '/shadcn/page3'
 next: '/shadcn/page5'
 ---
 
+import { Button } from "@/components/ui/button";
+
+**Instalar y configurar Shadcn UI en un proyecto Next.js o React**
+
+1. **Prerrequisitos**  
+   - Tener un proyecto basado en **Next.js 13+** (con soporte de App Router) o un proyecto React con configuración de Tailwind CSS.  
+   - **Tailwind CSS** ya instalado y configurado (v3+).
+
+2. **Instalar dependencias principales**:
+
+```bash  
+# Instalar la CLI de shadcn/ui y dependencias requeridas
+npm install @shadcn/cli tailwindcss radix-ui react react-dom
+```
+
+3. **Ejecutar el comando de inicializacion**
+
+```bash
+# Genera el esquema de carpetas en src/components/ui
+npx shadcn-ui init
+```
+
+4. **Buscar el componente en la Documentacion e instalarlo**
+
+```bash
+# Ejemplo: instalar el componente Button
+npm dlx shadcn-solid@latest add button
+```
+5. **Importar el componente en el proyecto y usar**:
+
+```ts
+import { Button } from "@/components/ui/button";
+
+<Button variant="outline">Outline</Button>;
+```
+
+<Button variant="outline">Outline</Button>

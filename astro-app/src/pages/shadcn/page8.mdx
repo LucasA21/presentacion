@@ -1,7 +1,33 @@
 ---
 layout: '../../layouts/main.astro'
-title: "Shadcn:"
+title: "Shadcn: Conclusiones"
 prev: '/shadcn/page7'
 next: '/'
 ---
 
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card";
+
+<Card class="max-w-3xl mx-auto my-4">
+  <CardHeader>
+    <CardTitle>Conclusiones</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <p class="">
+      Shadcn UI es una solución moderna que combina la accesibilidad de Radix UI con la flexibilidad de Tailwind CSS. Su modelo de distribución de componentes mediante archivos planos y CLI permite una <strong>personalización total</strong>, sin necesidad de overrides ni hacks de CSS.
+    </p>
+    <p class="mb-6">
+      Aunque requiere conocimiento previo de React y Tailwind, la curva de aprendizaje es razonable para desarrolladores familiarizados con ambos. La documentación bien estructurada y los ejemplos interactivos facilitan el proceso de adopción.
+    </p>
+    <p class="mb-6">
+      Con más de <strong>88 000 estrellas en GitHub</strong> y decenas de miles de descargas semanales, Shadcn UI lidera en popularidad frente a alternativas como Material UI, Chakra UI o simplemente usar Radix directamente. Su ecosistema de extensiones (Svelte, Astro, IA) y su enfoque de “copy-and-paste” de componentes lo posicionan como la opción preferida para equipos que buscan <strong>control absoluto sobre su design system</strong>.
+    </p>
+    <p class="mt-6">
+      En resumen, si el proyecto gira en torno a React/Next.js y ya se trabaja con Tailwind, Shadcn UI es la herramienta más recomendada para construir una UI accesible, estilizada y completamente adaptable.  
+    </p>
+  </CardContent>
+</Card>

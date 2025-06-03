@@ -27,7 +27,7 @@ import '../styles/global.css';
           href={prev}
           aria-label="Anterior"
           class="
-            md:hidden  /* Solo en móvil/tablet (<768px) */
+            md:hidden
             inline-flex items-center
             bg-white/90 dark:bg-gray-700/80
             p-2 rounded-full shadow-md
@@ -61,7 +61,6 @@ import '../styles/global.css';
       </h1>
     </div>
 
-    <!-- Celda Derecha: Flecha “Siguiente” en <768px, invisible en ≥768px -->
     <div class="flex justify-end">
       {next && (
         <a

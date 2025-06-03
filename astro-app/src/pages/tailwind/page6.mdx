@@ -5,12 +5,15 @@ prev: '/tailwind/page5'
 next: '/tailwind/page7'
 ---
 
-**Diseño Responsive y Estados**
-
-- **Prefijos**: `sm:`, `md:`, `lg:`, `xl:`  
-- **Estados**: `hover:`, `focus:`, `active:`, `dark:`  
-- **Ancho dinámico**: `w-full` , `sm:w-auto`  
-- **Tipografía adaptable**: `text-sm`, `md:text-base`, `lg:text-lg`
+**Diseño Responsive y Estados** (mobile-first)  
+- **Prefijos de breakpoints**:  
+  - `sm:` ≥ 640 px, `md:` ≥ 768 px, `lg:` ≥ 1024 px, `xl:` ≥ 1280 px  
+- **Estados**:  
+  - `hover:`, `focus:`, `active:`, `dark:`  
+- **Ancho dinámico**:  
+  - `w-full`, `sm:w-auto`, `md:w-1/2`, `lg:w-1/3`  
+- **Tipografía adaptable**:  
+  - `text-sm`, `md:text-base`, `lg:text-lg`  
 
 ```astro
 <button

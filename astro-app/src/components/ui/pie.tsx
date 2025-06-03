@@ -10,9 +10,9 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 const chartData = [
-  { browser: "tailwind", usage: 162000, fill: "var(--color-chart-3)" },
-  { browser: "bootstrap", usage: 88000, fill: "var(--color-chart-2)" },
-  { browser: "bulma", usage: 48000, fill: "var(--color-chart-1)" },
+  { browser: "tailwind", usage: 88000, fill: "var(--color-chart-1)" },
+  { browser: "bootstrap", usage: 162000, fill: "var(--color-chart-2)" },
+  { browser: "bulma", usage: 48000, fill: "var(--color-chart-3)" },
 ]
 
 const chartConfig = {

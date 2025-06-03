@@ -1,7 +1,77 @@
 ---
 layout: '../../layouts/main.astro'
-title: "Shadcn:"
+title: "Shadcn: Componentes"
 prev: '/shadcn/page4'
 next: '/shadcn/page6'
 ---
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { DrawerDemo } from "@/components/ui/drawer_demo";
+import { Button } from "@/components/ui/button";
+
+
+**Ejemplo de uso componentes**
+
+<h1 class="font-bold text-2xl"> 1. Button</h1>
+
+```bash
+pnpm dlx shadcn-solid@latest add button
+```
+
+```ts
+import { Button } from "@/components/ui/button";
+
+<Button variant="secondary">Secondary</Button>
+```
+
+<Button variant="secondary">Secondary</Button>
+
+
+<h1 class="font-bold text-2xl"> 2. Card</h1>
+
+```bash
+pnpm dlx shadcn-solid@latest add card
+```
+
+```js
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+```
+
+```astro
+<Card class="max-w-3xl mx-auto my-4">
+  <CardHeader>
+    <CardTitle>Titulo Ejemplo</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <p class="">
+       Texto ejemplo
+    </p>
+  </CardContent>
+</Card>
+```
+
+<Card class="max-w-3xl mx-auto my-4">
+  <CardHeader>
+    <CardTitle>Titulo Ejemplo</CardTitle>
+  </CardHeader>
+  <CardContent>
+    <p class="">
+       Texto ejemplo
+    </p>
+  </CardContent>
+</Card>
+
+<h1 class="font-bold text-2xl"> 3. Drawer</h1>
+
+```bash
+pnpm dlx shadcn-solid@latest add drawer
+```
+
+```js
+import { Drawer, DrawerContent, DrawerHeader, DrawerTitle } from "@/components/ui/drawer";
+
+<DrawerDemo />
+```
+
+<DrawerDemo client:load/>
 

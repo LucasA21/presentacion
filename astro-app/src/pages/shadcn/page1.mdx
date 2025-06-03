@@ -1,6 +1,35 @@
 ---
 layout: '../../layouts/main.astro'
-title: "Shadcn: ¿Qué es?"
-prev: '/tailwind/page8'
-next: '/shadcn/page2'
+title: "Shadcn: Propósito"
+prev: '/tailwind/page10'
+next: '/shadcn/page3'
 ---
+
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle
+} from "@/components/ui/card";
+
+
+
+**¿Qué es Shadcn UI?**
+
+**Shadcn UI** es un conjunto de componentes accesibles y personalizables para React y Next.js, construido sobre **Radix UI** (primitivas accesibles) y estilizado con **Tailwind CSS**.  
+Se lanzó en marzo de 2023 y combina la filosofía de utilidades atómicas de Tailwind con la accesibilidad de Radix para ofrecer UI “copy-and-paste”​ 
+Más que un paquete monolítico, Shadcn UI funciona como una **plataforma de distribución de componentes**: cada componente vive en archivos planos (flat-file schema) y se instala en tu proyecto mediante una CLI, lo que facilita la personalización o reemplazo de cualquier parte del código fuente​
+
+**Ejemplo de un componente generado por Shadcn UI**
+
+```astro
+import { Button } from '@/components/ui/button';
+
+export default function Home() {
+  return (
+    <Button variant="primary">
+      ¡Hola desde Shadcn UI!
+    </Button>
+  );
+}
+```
