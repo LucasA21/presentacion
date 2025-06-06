@@ -6,53 +6,55 @@ next: '/shadcn/page8'
 ---
 
 
-<div class="max-w-4xl mx-auto p-6 bg-gradient-to-r from-purple-800 via-indigo-700 to-blue-600 text-white rounded-lg shadow-lg">
-  <div class="mb-6 text-2xl font-bold">Herramientas comparables a Shadcn UI</div>
+<div class="max-w-4xl mx-auto p-6 bg-gradient-to-r from-purple-800 via-indigo-700 to-blue-600 text-white rounded-xl shadow-xl space-y-6">
 
-  <div class="flex flex-col md:flex-row gap-6">
-    <div class="flex-1 bg-white/20 p-4 rounded-lg">
-      <h3 class="text-xl font-semibold mb-2">Material UI (MUI)</h3>
-      <p class="italic mb-2">Componentes React basados en Material Design.</p>
-      <ul class="mb-2 list-disc list-inside text-sm">
-        <li><strong>Pros:</strong> maduro, amplio ecosistema de temas.</li>
-        <li><strong>Contras:</strong> overrides de Emotion para personalizar; bundle grande.</li>
+  <h2 class="text-2xl font-bold">¿Alternativas a Shadcn UI?</h2>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+    <div class="bg-white/20 p-4 rounded-lg">
+      <h3 class="text-lg font-semibold mb-1">Material UI</h3>
+      <p class="italic mb-1">React + Material Design</p>
+      <ul class="list-disc list-inside">
+        <li>Ecosistema maduro</li>
+        <li>Difícil de personalizar con Tailwind</li>
       </ul>
     </div>
 
-    <div class="flex-1 bg-white/20 p-4 rounded-lg">
-      <h3 class="text-xl font-semibold mb-2">Chakra UI</h3>
-      <p class="italic mb-2">UI React con theming por props.</p>
-      <ul class="mb-2 list-disc list-inside text-sm">
-        <li><strong>Pros:</strong> accesibilidad integrada, API declarativa.</li>
-        <li><strong>Contras:</strong> no usa utilidades Tailwind; bundle grande.</li>
+    <div class="bg-white/20 p-4 rounded-lg">
+      <h3 class="text-lg font-semibold mb-1">Chakra UI</h3>
+      <p class="italic mb-1">React + props de estilo</p>
+      <ul class="list-disc list-inside">
+        <li>Accesible por defecto</li>
+        <li>No usa Tailwind</li>
       </ul>
     </div>
 
-    <div class="flex-1 bg-white/20 p-4 rounded-lg">
-      <h3 class="text-xl font-semibold mb-2">Headless UI</h3>
-      <p class="italic mb-2">Componentes sin estilos de Tailwind Labs.</p>
-      <ul class="mb-2 list-disc list-inside text-sm">
-        <li><strong>Pros:</strong> libertad total de diseño, muy ligero.</li>
-        <li><strong>Contras:</strong> debes construir todo el CSS tú mismo.</li>
+    <div class="bg-white/20 p-4 rounded-lg">
+      <h3 class="text-lg font-semibold mb-1">Headless UI</h3>
+      <p class="italic mb-1">Solo funcionalidad</p>
+      <ul class="list-disc list-inside">
+        <li>Total libertad con Tailwind</li>
+        <li>Tenés que hacer todo el CSS</li>
       </ul>
     </div>
 
-    <div class="flex-1 bg-white/20 p-4 rounded-lg">
-      <h3 class="text-xl font-semibold mb-2">DaisyUI / Flowbite</h3>
-      <p class="italic mb-2">Plugins Tailwind con componentes preestilizados.</p>
-      <ul class="mb-2 list-disc list-inside text-sm">
-        <li><strong>Pros:</strong> instalación sencilla, temas listos.</li>
-        <li><strong>Contras:</strong> menos flexibilidad que Shadcn UI, dependes de clases predefinidas.</li>
+    <div class="bg-white/20 p-4 rounded-lg">
+      <h3 class="text-lg font-semibold mb-1">DaisyUI</h3>
+      <p class="italic mb-1">Componentes prehechos para Tailwind</p>
+      <ul class="list-disc list-inside">
+        <li>Fácil de usar</li>
+        <li>Poco flexibles</li>
       </ul>
     </div>
   </div>
 
-  <div class="mt-8 p-4 bg-white/10 rounded-lg">
-    <p class="mb-2"><strong>¿Cuál gana en la comunidad?</strong></p>
-    <ul class="list-disc list-inside text-sm">
-      <li><strong>Shadcn UI</strong> (88 000 ⭐) supera a Material UI (85 000 ⭐) y Headless UI ( 27 000 ⭐).</li>
-      <li><strong>En descargas npm</strong> , Material UI (1 400 000/sem.) y Chakra UI (1 000 000/sem.) están arriba, pero Shadcn UI crece rápido por su modelo de “copy-paste” de componentes.</li>
-      <li><strong>Shadcn UI lidera por ⭐</strong>  en repositorios modernos de accesibilidad + Tailwind, mientras Material UI y Chakra siguen fuertes en proyectos sin Tailwind.</li>
+  <div class="bg-white/10 p-4 rounded-lg text-sm">
+    <h3 class="font-bold mb-2">📈 Popularidad actual</h3>
+    <ul class="list-disc list-inside">
+      <li>Shadcn UI: +88k ⭐  → supera a MUI y Headless UI</li>
+      <li>MUI y Chakra dominan en descargas</li>
+      <li>Shadcn crece rápido en proyectos con Tailwind y accesibilidad</li>
     </ul>
   </div>
 </div>
+
