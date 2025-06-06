@@ -92,74 +92,78 @@ import '../styles/global.css';
 
 
     <main
+  class="
+    flex-1 relative flex items-center justify-center
+    pt-16 px-4 sm:px-6 md:px-8
+  "
+>
+  <!-- Flecha izquierda -->
+  {prev && (
+    <a
+      href={prev}
+      aria-label="Anterior"
       class="
-        flex-1 relative flex items-center justify-center
-        pt-16 px-4 sm:px-6 md:px-8
+        hidden md:flex fixed left-4
+        top-1/2 -translate-y-1/2
+        bg-white/90 p-2 sm:p-3 md:p-4
+        dark:bg-gray-700/80
+        rounded-full shadow-md
+        hover:scale-110 transition z-10
       "
     >
-      <div
-        class="
-          relative w-full max-w-xl sm:max-w-lg md:max-w-2xl lg:max-w-3xl
-          bg-white/20 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl shadow-xl
-          p-6 sm:p-8 md:p-10 lg:p-12
-          space-y-6
-          transform transition-transform duration-300 hover:scale-105
-          animate-fadeIn
-        "
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 sm:h-6 sm:w-6 text-purple-700 dark:text-purple-300"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
       >
-        <slot />
-      </div>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    </a>
+  )}
 
-      {prev && (
-        <a
-          href={prev}
-          aria-label="Anterior"
-          class="
-            hidden md:flex absolute left-2 sm:left-4 md:left-6
-            top-1/2 transform -translate-y-1/2
-            bg-white/90 p-2 sm:p-3 md:p-4
-            dark:bg-gray-700/80
-            rounded-full shadow-md
-            hover:scale-110 transition
-          "
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 sm:h-6 sm:w-6 text-purple-700 dark:text-purple-300"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-          </svg>
-        </a>
-      )}
+  <!-- Flecha derecha -->
+  {next && (
+    <a
+      href={next}
+      aria-label="Siguiente"
+      class="
+        hidden md:flex fixed right-4
+        top-1/2 -translate-y-1/2
+        bg-white/90 p-2 sm:p-3 md:p-4
+        dark:bg-gray-700/80
+        rounded-full shadow-md
+        hover:scale-110 transition z-10
+      "
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 sm:h-6 sm:w-6 text-purple-700 dark:text-purple-300"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </a>
+  )}
 
-      {next && (
-        <a
-          href={next}
-          aria-label="Siguiente"
-          class="
-            hidden md:flex absolute right-2 sm:right-4 md:right-6
-            top-1/2 transform -translate-y-1/2
-            bg-white/90 p-2 sm:p-3 md:p-4
-            dark:bg-gray-700/80
-            rounded-full shadow-md
-            hover:scale-110 transition
-          "
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 sm:h-6 sm:w-6 text-purple-700 dark:text-purple-300"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-          </svg>
-        </a>
-      )}
-    </main>
+  <!-- Contenido principal -->
+  <div
+    class="
+      relative w-full max-w-xl sm:max-w-lg md:max-w-2xl lg:max-w-3xl
+      bg-white/20 dark:bg-gray-800/60 backdrop-blur-md rounded-3xl shadow-xl
+      p-6 sm:p-8 md:p-10 lg:p-12
+      space-y-6
+      transform transition-transform duration-300 hover:scale-105
+      animate-fadeIn
+    "
+  >
+    <slot />
+  </div>
+</main>
+
 
     <style>
       @keyframes fadeIn {
