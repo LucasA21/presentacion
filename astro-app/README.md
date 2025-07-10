@@ -1,13 +1,27 @@
-# Astro with Tailwind
+# Presentación Tailwind & Shadcn
 
-```sh
-pnpm create astro@latest -- --template with-tailwindcss
-```
+Una presentación interactiva creada con **Astro** que explora las tecnologías **Tailwind CSS** y **Shadcn UI** para el desarrollo de interfaces modernas.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-tailwindcss)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/with-tailwindcss/devcontainer.json)
+## Propósito
 
-Astro comes with [Tailwind](https://tailwindcss.com) support out of the box. This example showcases how to style your Astro project with Tailwind.
+Este proyecto sirve como material educativo para demostrar:
+- **Tailwind CSS**: Framework utility-first para estilos atómicos
+- **Shadcn UI**: Biblioteca de componentes accesibles y personalizables
+- Integración de ambas tecnologías en un proyecto real
 
-For complete setup instructions, please see our [Tailwind Integration Guide](https://docs.astro.build/en/guides/integrations-guide/tailwind).
+## Tecnologías Utilizadas
+
+### Core
+- **Astro 5.8.0** - Framework web para sitios estáticos
+- **React 19.1.0** - Biblioteca para interfaces de usuario
+- **TypeScript** - Tipado estático
+
+### Styling & UI
+- **Tailwind CSS 4.1.3** - Framework CSS utility-first
+- **Shadcn UI** - Componentes accesibles
+- **Radix UI** - Primitivos de UI accesibles
+
+
+### Deployment
+- **Netlify** - Hosting y deployment automático
+
